@@ -8,6 +8,7 @@ class_name ScenePainterLabelSettings
 		text = value
 		changed.emit()
 
+## The max width a line of text can be in pixels before it wraps.
 @export var max_line_width: float = 300:
 	set(value):
 		max_line_width = value

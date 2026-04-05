@@ -99,7 +99,7 @@ func on_settings_changed() -> void:
 	default_max_line_width = init_setting("default_max_line_width", 600)
 	default_label_settings.font_size = init_setting("default_font_size", 32)
 	default_label_settings.font_color = init_setting("default_font_color", Color.WHITE)
-	data_folder = init_setting("data_folder", "res://scene_paint")
+	data_folder = init_setting("data_folder", "res://")
 	ProjectSettings.add_property_info(
 		{
 			"name"= setting("data_folder"),

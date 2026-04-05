@@ -61,6 +61,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="ConfirmationDialog/VBoxContainer/HBoxContainer" unique_id=1603035669]
 layout_mode = 2
 size_flags_horizontal = 3
+tooltip_text = "The diameter of the brush in pixels."
+mouse_filter = 0
 text = "Brush Size"
 clip_text = true
 
@@ -76,6 +78,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="ConfirmationDialog/VBoxContainer/HBoxContainer2" unique_id=81667617]
 layout_mode = 2
 size_flags_horizontal = 3
+tooltip_text = "The vertical and horizontal size of the eraser."
+mouse_filter = 0
 text = "Eraser Size"
 clip_text = true
 
@@ -91,6 +95,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="ConfirmationDialog/VBoxContainer/HBoxContainer3" unique_id=1124086713]
 layout_mode = 2
 size_flags_horizontal = 3
+tooltip_text = "The color of the brush."
+mouse_filter = 0
 text = "Brush Color"
 clip_text = true
 
@@ -104,6 +110,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="ConfirmationDialog/VBoxContainer/HBoxContainer4" unique_id=834954616]
 layout_mode = 2
 size_flags_horizontal = 3
+tooltip_text = "The color the canvas is modulated by. Functions exactly the same as the Modulate property of any canvas item, and can be used to make the canvas partially transparent."
+mouse_filter = 0
 text = "Canvas Modulate"
 clip_text = true
 
