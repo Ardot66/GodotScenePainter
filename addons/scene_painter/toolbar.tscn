@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://ch6rwhwipoa16"]
+
+[ext_resource type="Script" uid="uid://bbuj4j515scww" path="res://addons/scene_painter/scene_painter_toolbar.gd" id="1_iecbh"]
+
+[node name="Toolbar" type="HBoxContainer" unique_id=969002130 node_paths=PackedStringArray("visibility_button", "paint_button", "edit_text_button", "config_button", "configuration_popup", "brush_size_range", "eraser_size_range", "brush_color_picker", "canvas_color_picker")]
+script = ExtResource("1_iecbh")
+visibility_button = NodePath("VisibilityToggle")
+paint_button = NodePath("PaintingToggle")
+edit_text_button = NodePath("TextEditingToggle")
+config_button = NodePath("ConfigButton")
+configuration_popup = NodePath("ConfirmationDialog")
+brush_size_range = NodePath("ConfirmationDialog/VBoxContainer/HBoxContainer/SpinBox")
+eraser_size_range = NodePath("ConfirmationDialog/VBoxContainer/HBoxContainer2/SpinBox")
+brush_color_picker = NodePath("ConfirmationDialog/VBoxContainer/HBoxContainer3/ColorPickerButton")
+canvas_color_picker = NodePath("ConfirmationDialog/VBoxContainer/HBoxContainer4/ColorPickerButton")
+
+[node name="VisibilityToggle" type="Button" parent="." unique_id=1303628891]
+layout_mode = 2
+tooltip_text = "Toggle Drawing Canvas Visibility"
+theme_type_variation = &"FlatButton"
+toggle_mode = true
+button_pressed = true
+
+[node name="PaintingToggle" type="Button" parent="." unique_id=837538254]
+layout_mode = 2
+tooltip_text = "Painting Mode
+LMB: Paint
+RMB: Erase"
+theme_type_variation = &"FlatButton"
+toggle_mode = true
+
+[node name="TextEditingToggle" type="Button" parent="." unique_id=1668134023]
+layout_mode = 2
+tooltip_text = "Text Mode"
+theme_type_variation = &"FlatButton"
+toggle_mode = true
+
+[node name="ConfigButton" type="Button" parent="." unique_id=270835899]
+layout_mode = 2
+tooltip_text = "Paintbrush Options"
+theme_type_variation = &"FlatButton"
+
+[node name="VSeparator" type="VSeparator" parent="." unique_id=40144568]
+layout_mode = 2
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="." unique_id=1618687685]
+oversampling_override = 1.0
+title = "Configure Paintbrush"
+initial_position = 2
+size = Vector2i(300, 177)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ConfirmationDialog" unique_id=1541953525]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 292.0
+offset_bottom = 128.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ConfirmationDialog/VBoxContainer" unique_id=1123123943]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ConfirmationDialog/VBoxContainer/HBoxContainer" unique_id=1603035669]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Brush Size"
+clip_text = true
+
+[node name="SpinBox" type="SpinBox" parent="ConfirmationDialog/VBoxContainer/HBoxContainer" unique_id=1521336693]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1000.0
+custom_arrow_step = 5.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ConfirmationDialog/VBoxContainer" unique_id=758618691]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ConfirmationDialog/VBoxContainer/HBoxContainer2" unique_id=81667617]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Eraser Size"
+clip_text = true
+
+[node name="SpinBox" type="SpinBox" parent="ConfirmationDialog/VBoxContainer/HBoxContainer2" unique_id=1520121906]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10000.0
+custom_arrow_step = 5.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ConfirmationDialog/VBoxContainer" unique_id=1858565092]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ConfirmationDialog/VBoxContainer/HBoxContainer3" unique_id=1124086713]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Brush Color"
+clip_text = true
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="ConfirmationDialog/VBoxContainer/HBoxContainer3" unique_id=1032039215]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ConfirmationDialog/VBoxContainer" unique_id=1644296120]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ConfirmationDialog/VBoxContainer/HBoxContainer4" unique_id=834954616]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Canvas Modulate"
+clip_text = true
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="ConfirmationDialog/VBoxContainer/HBoxContainer4" unique_id=629605936]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="toggled" from="VisibilityToggle" to="." method="set_visibility"]
+[connection signal="pressed" from="ConfigButton" to="." method="configure"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="accept_configuration"]
