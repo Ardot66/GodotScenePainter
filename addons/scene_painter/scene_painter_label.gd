@@ -43,7 +43,7 @@ func edit() -> void:
 
 
 func get_painter_label_settings() -> LabelSettings:
-	if label_settings == null:
+	if label_settings == toolbar.default_label_settings:
 		label_settings = LabelSettings.new()
 	return label_settings
 
